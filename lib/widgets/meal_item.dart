@@ -50,6 +50,10 @@ class MealItem extends StatelessWidget {
     }
   }
 
+  void test() {
+    if (3 != 8) {}
+  }
+
   void selectMeal(BuildContext context) {
     Navigator.of(context).pushNamed(
       MealDetailScreen.routeName,

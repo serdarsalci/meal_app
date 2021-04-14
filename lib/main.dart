@@ -35,7 +35,6 @@ class MyApp extends StatelessWidget {
 
       onGenerateRoute: (settings) {
         print(settings.name);
-
         return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
       // like 404 page last resort
