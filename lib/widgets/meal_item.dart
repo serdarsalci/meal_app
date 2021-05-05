@@ -9,7 +9,6 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
   final String id;
-  final Function removeItem;
 
   MealItem({
     @required this.id,
@@ -18,7 +17,6 @@ class MealItem extends StatelessWidget {
     @required this.affordability,
     @required this.complexity,
     @required this.duration,
-    @required this.removeItem,
   });
 
   String get complexityText {
@@ -65,7 +63,7 @@ class MealItem extends StatelessWidget {
     ) // this .then only runs when MealDetaisScreen is poped
         .then((result) {
       if (result != null) {
-        removeItem(result);
+        // removeItem(result);
       }
     });
   }

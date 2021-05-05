@@ -19,6 +19,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
   bool _vegan = false;
   bool _lactoseFree = false;
 
+  svFilters() {
+    widget.saveFilters({
+      'gluten': _glutenFree,
+      'lactose': _lactoseFree,
+      'vegan': _vegan,
+      'vegetarian': _vegetarian
+    });
+  }
+
   @override
   initState() {
     _glutenFree = widget.currentFilters['gluten'];
@@ -84,6 +93,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   setState(() {
                     _glutenFree = value;
                   });
+                  svFilters();
                 },
               ),
               _buildSwitchListTile(
@@ -94,6 +104,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   setState(() {
                     _lactoseFree = value;
                   });
+                  svFilters();
                 },
               ),
               _buildSwitchListTile(
@@ -104,6 +115,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   setState(() {
                     _vegetarian = value;
                   });
+                  svFilters();
                 },
               ),
               _buildSwitchListTile(
@@ -114,6 +126,7 @@ class _FiltersScreenState extends State<FiltersScreen> {
                   setState(() {
                     _vegan = value;
                   });
+                  svFilters();
                 },
               ),
             ],
